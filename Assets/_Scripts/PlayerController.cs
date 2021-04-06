@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    
+    private GameManager gm;
+    
     // Tutorial para fazer o Jump: https://www.youtube.com/watch?v=ptvK4Fp5vRY
     public int velocity;
 
@@ -20,8 +23,12 @@ public class PlayerController : MonoBehaviour
     private BoxCollider2D boxCollider;
     private bool isDead; 
 
+    [SerializeField]
+    private int life = 5;
+
     void Start()
     {
+        gm = GameManager.GetInstance();
         animator = GetComponent<Animator>();
         isDead = false;
         rigidBody = GetComponent<Rigidbody2D>();
@@ -35,20 +42,30 @@ public class PlayerController : MonoBehaviour
     }
     
 
-
     // Update is called once per frame
     void Update(){
+        if (gm.gameState != GameManager.GameState.GAME) return;
+
+        if(Input.GetKeyDown(KeyCode.Escape) && gm.gameState == GameManager.GameState.GAME) {
+            gm.ChangeState(GameManager.GameState.PAUSE);
+        }
+
         //Arrumar para permitir pulo duplo e nao infinito.
         if (isGrounded() && Input.GetKeyDown(KeyCode.Space)){
             animator.SetBool("Jump", true);
             float jumpVelocity = 5f; 
             rigidBody.velocity = Vector2.up * jumpVelocity;
         }
+    
+        if (Input.GetKeyDown(KeyCode.Q))
+            Attack();
     }
 
 
     void FixedUpdate()
     {
+        if (gm.gameState != GameManager.GameState.GAME) return;
+
         if (!isDead){
         if (!isGrounded()) 
             animator.SetBool("Jump", false);
@@ -67,9 +84,6 @@ public class PlayerController : MonoBehaviour
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
 
-
-        if (Input.GetKeyDown(KeyCode.Q))
-            Attack();
         
     }
 
@@ -88,6 +102,7 @@ public class PlayerController : MonoBehaviour
         //Dano ao inimigo
         foreach(Collider2D enemy in hitEnemies){
             Debug.Log("Bati no inimigo");
+            enemy.gameObject.GetComponent<EnemyController>().TakeDamage();
         }
     }
     void OnDrawGizmosSelected()
@@ -102,4 +117,17 @@ public class PlayerController : MonoBehaviour
         //animator.Play("player_dieLeonardoMendes");
 
     }
+
+    public void TakeDamage()
+    {
+        life--;
+        if (life <=0) Die();
+    }
+
+    private void Die()
+    {
+        animator.SetTrigger("Death");
+
+    }
+
 }

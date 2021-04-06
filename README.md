@@ -6,7 +6,7 @@ Arrumar pulo
 Arrumar animação de ataque do player para ter os 3 tipos diferentes
 
 To do:
-Prefab de todos os personagens (inimigos)
+
 Comportamento dos inimigos
 ** UI (menu, pause, play)
 Mudar de cena no fim da tela 
@@ -16,6 +16,7 @@ Drops de comida para dar vida
 
 Só permitir avançar e nao voltar
 
+Fazer com que a animacao de morte caia no chao
 
 Inimigos:
 Bat
