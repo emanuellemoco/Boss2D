@@ -8,11 +8,12 @@ Arrumar animação de ataque do player para ter os 3 tipos diferentes
 To do:
 
 Comportamento dos inimigos
-** UI (menu, pause, play)
+** UI (menu, pause, play) ==> Falta a tela de FIM de JOGO
 Mudar de cena no fim da tela 
 Montar os mapas
 *** Pontos e vidas
 Drops de comida para dar vida
+Procurar botão e fontes 
 
 Só permitir avançar e nao voltar
 
