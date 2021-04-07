@@ -30,3 +30,8 @@ Witch - joga fogo
 
 
 Criar uma historinha
+
+
+
+MONTAR A FASE 
+e o comportamento quando nao tem jogador proximo 

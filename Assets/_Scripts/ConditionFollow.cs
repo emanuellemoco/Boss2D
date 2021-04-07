@@ -19,6 +19,7 @@ public class ConditionFollow : Condition
 
    public override bool Test()
    {
+    //    Debug.Log(Vector2.Distance(agent.position, target.position));
        if (target == null) {return false;}
        return Vector2.Distance(agent.position, target.position) >= minDist && Vector2.Distance(agent.position, target.position) <= maxDist;
    }

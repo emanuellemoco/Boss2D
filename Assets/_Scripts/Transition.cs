@@ -5,9 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Transition
 {   
-    [SerializeField]
     public Condition condition;
-    [SerializeField]
     public State target;
 
     

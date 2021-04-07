@@ -10,8 +10,21 @@ public class AttackState : State
     public float attackRange = 0.5f;
     public LayerMask playerLayer;
     private float _attacktTimestamp = 0.0f;
+    public float distMax = 4.0f;
+    public float distMin = 0.25f;
      
-     
+    public override void Awake()
+    {
+       base.Awake();
+
+       Transition Follow = new Transition();
+
+       if (GameObject.FindWithTag("Player") != null){
+       Follow.condition = new ConditionFollow(transform, GameObject.FindWithTag("Player").transform, distMax, distMin);
+       Follow.target = GetComponent<FollowState>();
+       transitions.Add(Follow);
+       }
+    }
     void Start() 
     {
         animator = GetComponent<Animator>();
@@ -24,6 +37,8 @@ public class AttackState : State
             
         _attacktTimestamp = Time.time;
         //Criar para os 3 tipos de ataques e chamar aleaoriamente
+        
+        animator.SetFloat("Velocity", 0.0f);
         animator.SetTrigger("Attack");
         
         //Detectando o jogador
@@ -44,6 +59,7 @@ public class AttackState : State
 
     public override void Update()
     {
+        Debug.Log("Estou no follow attack");
         Attack();
 
     }

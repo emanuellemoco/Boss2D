@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Condition : MonoBehaviour
+
+public class Condition 
 {
     public virtual bool Test()
     {
