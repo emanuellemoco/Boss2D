@@ -7,8 +7,12 @@ Arrumar animação de ataque do player para ter os 3 tipos diferentes
 
 To do:
 
+-> Tirar dúvida de como fazer as transições de maneira modular
+
+-> Montar mais duas cenas para a demo
+
+Arrumar o chao
 Comportamento dos inimigos
-** UI (menu, pause, play) ==> Falta a tela de FIM de JOGO
 Mudar de cena no fim da tela 
 Montar os mapas
 *** Pontos e vidas

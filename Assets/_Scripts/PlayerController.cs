@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Jump", false);
         float inputX = Input.GetAxis("Horizontal");
         transform.position += new Vector3(inputX, 0, 0) * Time.deltaTime * velocity;
-        
+        // Thrust(inputX, 0);
         if (inputX != 0) 
             animator.SetFloat("Velocity", 1.0f);
         

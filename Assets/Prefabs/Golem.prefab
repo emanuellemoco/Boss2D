@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 7549399864481873124}
   - component: {fileID: 7549399864481873123}
   - component: {fileID: 7549399864481873145}
+  - component: {fileID: 5754289518471197792}
   m_Layer: 9
   m_Name: Golem
   m_TagString: Untagged
@@ -196,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74709f928cdf7f14580b7385c658fc71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  td: {fileID: 11400000, guid: c7312397a285f4a4ea23e1a5804cc067, type: 2}
   life: 5
 --- !u!114 &7549399864481873145
 MonoBehaviour:
@@ -204,14 +206,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7549399864481873122}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68c015cbab6c7254fad9b1223f813b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitions:
+  - condition: {fileID: 0}
+    target: {fileID: 0}
   attackDelay: 2
   attackPoint: {fileID: 7549399863875015397}
   attackRange: 0.5
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!114 &5754289518471197792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549399864481873122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b848e87da2462604b9742f1398aa4da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitions: []

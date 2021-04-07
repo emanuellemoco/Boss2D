@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [System.Serializable]
-public class Condition : MonoBehaviour
+public class TransitionArray 
 {
-    public virtual bool Test()
-    {
-        return false;
-    }
+        [SerializeField] 
+        private Transition[] _transitions;
+
 }

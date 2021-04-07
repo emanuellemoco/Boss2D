@@ -6,10 +6,12 @@ public class AttackState : State
 {
     Animator animator;
     public float attackDelay = 0.4f;
-    public Transform attackPoint; 
+    public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask playerLayer;
     private float _attacktTimestamp = 0.0f;
+     
+     
     void Start()
     {
         animator = GetComponent<Animator>();
