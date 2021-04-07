@@ -212,8 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitions:
-  - condition: {fileID: 0}
-    target: {fileID: 0}
+  - {fileID: 0}
   attackDelay: 2
   attackPoint: {fileID: 7549399863875015397}
   attackRange: 0.5
@@ -232,4 +231,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b848e87da2462604b9742f1398aa4da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitions: []
+  transitions:
+  - {fileID: 0}

@@ -27,3 +27,6 @@ Inimigos:
 Bat
 Golem
 Witch - joga fogo
+
+
+Criar uma historinha

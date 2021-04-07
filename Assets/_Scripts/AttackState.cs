@@ -12,7 +12,7 @@ public class AttackState : State
     private float _attacktTimestamp = 0.0f;
      
      
-    void Start()
+    void Start() 
     {
         animator = GetComponent<Animator>();
         

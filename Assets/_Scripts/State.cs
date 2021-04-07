@@ -11,7 +11,7 @@ public class State : MonoBehaviour
        transitions = new List<Transition>();
        //TODO
        // definir as transições aqui
-   }
+   } 
 
    public virtual void OnEnable()
    {
