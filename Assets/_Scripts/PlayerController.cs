@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private bool isDead; 
 
     [SerializeField]
-    private int life = 5;
+    // private int life = 5;
 
     void Start()
     {
@@ -120,8 +120,8 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage()
     {
-        life--;
-        if (life <=0) Die();
+        gm.life--;
+        if (gm.life <=0) Die();
     }
 
     private void Die()

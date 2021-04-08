@@ -9,6 +9,7 @@ public class GameManager
 
     public GameState gameState { get; private set; }
     public GameState lastState { get; private set; }
+    public int life;
     
 
 
@@ -32,7 +33,7 @@ public class GameManager
 
     private GameManager()
    {
-
+       life = 5;
        gameState = GameState.MENU;
        lastState = GameState.MENU;
    }
@@ -47,7 +48,7 @@ public class GameManager
 
     private void Reset()
     {
-
+        life = 5;
     }
 
 
