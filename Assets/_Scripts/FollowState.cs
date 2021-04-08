@@ -10,7 +10,9 @@ public class FollowState : State
     Vector3 direction;
     GameManager gm;
     Animator animator;
-    public float distMin = 4.0f;
+    public float distMax = 4.0f;
+    public float distMin = 1.0f;
+     
     
     
     SteerableBehaviour steerable;
@@ -19,12 +21,18 @@ public class FollowState : State
     {
        base.Awake();
 
+       Transition Idle = new Transition();
+
        Transition Attack = new Transition();
 
        if (GameObject.FindWithTag("Player") != null){ 
        Attack.condition = new ConditionAttack(transform, GameObject.FindWithTag("Player").transform, distMin);
        Attack.target = GetComponent<AttackState>();
        transitions.Add(Attack);
+
+       Idle.condition = new ConditionIdle(transform, GameObject.FindWithTag("Player").transform, distMax);
+       Idle.target = GetComponent<IdleState>();
+       transitions.Add(Idle);
        }
     }
 
@@ -39,6 +47,8 @@ public class FollowState : State
     // Update is called once per frame
     public override void Update()
     {
+        Debug.Log("Estou no follow state");
+
         animator.SetFloat("Velocity", 1.0f);
 
         if (gm.gameState != GameManager.GameState.GAME) return;

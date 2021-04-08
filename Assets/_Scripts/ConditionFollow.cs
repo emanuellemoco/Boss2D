@@ -21,6 +21,6 @@ public class ConditionFollow : Condition
    {
     //    Debug.Log(Vector2.Distance(agent.position, target.position));
        if (target == null) {return false;}
-       return Vector2.Distance(agent.position, target.position) >= minDist && Vector2.Distance(agent.position, target.position) <= maxDist;
+       return Vector2.Distance(agent.position, target.position) >= minDist && Vector2.Distance(agent.position, target.position) < maxDist;
    }
 }

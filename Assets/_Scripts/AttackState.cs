@@ -18,11 +18,16 @@ public class AttackState : State
        base.Awake();
 
        Transition Follow = new Transition();
+       Transition Idle = new Transition();
 
        if (GameObject.FindWithTag("Player") != null){
        Follow.condition = new ConditionFollow(transform, GameObject.FindWithTag("Player").transform, distMax, distMin);
        Follow.target = GetComponent<FollowState>();
        transitions.Add(Follow);
+
+       Idle.condition = new ConditionIdle(transform, GameObject.FindWithTag("Player").transform, distMax);
+       Idle.target = GetComponent<IdleState>();
+       transitions.Add(Idle);
        }
     }
     void Start() 
@@ -59,7 +64,7 @@ public class AttackState : State
 
     public override void Update()
     {
-        Debug.Log("Estou no follow attack");
+        Debug.Log("Estou no attack");
         Attack();
 
     }

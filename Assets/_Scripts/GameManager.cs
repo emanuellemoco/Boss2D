@@ -34,6 +34,7 @@ public class GameManager
     private GameManager()
    {
        life = 5;
+       
        gameState = GameState.MENU;
        lastState = GameState.MENU;
    }

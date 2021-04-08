@@ -50,6 +50,14 @@ public class PlayerController : MonoBehaviour
             gm.ChangeState(GameManager.GameState.PAUSE);
         }
 
+        Vector2 posicaoVP = Camera.main.WorldToViewportPoint(transform.position);
+        if(posicaoVP.y < 0)
+        {
+            Debug.Log("Caiu no buraco");
+            Die();
+        }
+
+
         //Arrumar para permitir pulo duplo e nao infinito.
         if (isGrounded() && Input.GetKeyDown(KeyCode.Space)){
             animator.SetBool("Jump", true);
@@ -60,7 +68,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
             Attack();
     }
-
 
     void FixedUpdate()
     {
@@ -83,6 +90,8 @@ public class PlayerController : MonoBehaviour
         else
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
+
+
 
         
     }
@@ -123,10 +132,15 @@ public class PlayerController : MonoBehaviour
         gm.life--;
         if (gm.life <=0) Die();
     }
-
+ 
     private void Die()
     {
         animator.SetTrigger("Death");
+
+        if(gm.gameState == GameManager.GameState.GAME) 
+        {
+            gm.ChangeState(GameManager.GameState.ENDGAME);
+        } 
 
     }
 
