@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: a4760e052759d124da9bef91b4c85fc7
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8140691623221440498
+    second: OneWayTile_0
+  - first:
+      213: -8653897358921330274
+    second: OneWayTile_1
+  - first:
+      213: -2458991162758827029
+    second: OneWayTile_2
+  - first:
+      213: -338242868334395462
+    second: OneWayTile_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -45,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,7 +109,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: OneWayTile_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 16
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ffac1c66eb89f070800000000000000
+      internalID: 8140691623221440498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OneWayTile_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 16
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e919dcec33e27e780800000000000000
+      internalID: -8653897358921330274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OneWayTile_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 16
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be37fe5d098efddd0800000000000000
+      internalID: -2458991162758827029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OneWayTile_3
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 16
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf7e1147e15e4bf0800000000000000
+      internalID: -338242868334395462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
