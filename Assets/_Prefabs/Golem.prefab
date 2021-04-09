@@ -221,7 +221,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8192
   distMax: 6
-  distMin: 2
+  distMin: 1
 --- !u!114 &3475136866623596147
 MonoBehaviour:
   m_ObjectHideFlags: 0

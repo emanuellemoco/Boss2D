@@ -121,11 +121,6 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        //animator.Play("player_dieLeonardoMendes");
-
-    }
 
     public void TakeDamage()
     {
@@ -135,6 +130,7 @@ public class PlayerController : MonoBehaviour
  
     private void Die()
     {
+        gm.life = 0;
         animator.SetTrigger("Death");
 
         if(gm.gameState == GameManager.GameState.GAME) 

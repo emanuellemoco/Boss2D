@@ -189,7 +189,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8192
-  distMax: 3
+  distMax: 6
   distMin: 1
 --- !u!114 &2112865179664557353
 MonoBehaviour:
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitions: []
-  distMax: 3
+  distMax: 6
   distMin: 1
 --- !u!114 &2112865179664557358
 MonoBehaviour:
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitions: []
-  distMax: 3
+  distMax: 6
   distMin: 1
   waypoints:
   - {fileID: 0}

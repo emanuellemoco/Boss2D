@@ -65,7 +65,7 @@ public class IdleState : State
             direction = waypoints[0].position - transform.position;
  
             // se a distancia for 0, deve seguir o outro ponto
-            if(Vector3.Distance(transform.position, waypoints[0].position) <= 1.5f){
+            if(Vector3.Distance(transform.position, waypoints[0].position) <= 2.5f){
                 folloWPoint0 = false;
                 folloWPoint1 = true;
             }
@@ -76,7 +76,7 @@ public class IdleState : State
             direction = waypoints[1].position - transform.position;
 
             // se a distancia for 0, deve seguir o outro ponto 
-            if(Vector3.Distance(transform.position, waypoints[1].position) <= 1.5f){
+            if(Vector3.Distance(transform.position, waypoints[1].position) <= 2.5f){
             folloWPoint0 = true;
             folloWPoint1 = false;
             }

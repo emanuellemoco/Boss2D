@@ -19,6 +19,7 @@ public class UI_Pause : MonoBehaviour
 
   public void Begin()
   {
+      Destroy(GameObject.FindWithTag("Player"));
       gm.ChangeState(GameManager.GameState.MENU);
   }
 
