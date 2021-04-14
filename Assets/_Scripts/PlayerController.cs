@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     private BoxCollider2D boxCollider;
     private bool isDead; 
 
+    
+
     [SerializeField]
     // private int life = 5;
 

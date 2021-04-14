@@ -35,3 +35,24 @@ Criar uma historinha
 
 MONTAR A FASE 
 e o comportamento quando nao tem jogador proximo 
+
+
+CREDITOS 
+
+
+https://freesound.org/people/qubodup/sounds/442769/ <- Sword Hit
+https://freesound.org/people/newagesoup/sounds/338674/ <- Lobo
+
+https://freesound.org/people/qubodup/sounds/442957/ <- Monster
+https://freesound.org/people/Debsound/sounds/250148/ <- Monster
+
+
+https://freesound.org/people/Abacagi/sounds/483397/ <- Morcego maybe 
+
+https://freesound.org/people/qubodup/sounds/442872/ <-- Fire sound
+
+
+This [video/theatre piece/...] uses these sounds from freesound:
+"sound1" by user1 ( http://freesound.org/s/soundID/ ) licensed under CCBYNC 3.0
+"sound2", "sound3" by user2 ( http://freesound.org/people/user2/ ) licensed under CCBY 3.0
+etc..
