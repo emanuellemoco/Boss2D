@@ -6,10 +6,18 @@ public class UI_EndGame : MonoBehaviour
 
     GameManager gm;
     
-    public void Menu()
-    {
-        gm.ChangeState(GameManager.GameState.MENU);  
-    }
+
+    public void PlayAgain()
+  {      
+      Destroy(GameObject.FindWithTag("Player"));
+      gm.ChangeState(GameManager.GameState.GAME);
+  }
+
+  public void Begin()
+  {
+      Destroy(GameObject.FindWithTag("Player"));
+      gm.ChangeState(GameManager.GameState.MENU);
+  }
 
    private void OnEnable()
    {

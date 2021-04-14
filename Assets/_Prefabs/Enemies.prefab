@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 193105658}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Wolf1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1128666496}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Waypoint1
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1223567699}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Waypoint0
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1813212923}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Golem1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3605953182935249174}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bat0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3605953183139169556}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Golem0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3605953183935927289}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Waypoint0
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -377,7 +377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3605953184121171904}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Waypoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3605953184244828002}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Waypoint1
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -441,7 +441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3605953184265135964}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3605953184335215416}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Wolf0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

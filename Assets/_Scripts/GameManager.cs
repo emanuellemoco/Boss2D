@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager
 {
 
-    public enum GameState { MENU, GAME, PAUSE, ENDGAME };
+    public enum GameState { MENU, GAME, PAUSE, ENDGAME, CONTROL };
 
     public GameState gameState { get; private set; }
     public GameState lastState { get; private set; }
@@ -41,7 +41,7 @@ public class GameManager
    
    public void ChangeState(GameState nextState)
     {
-    if (nextState == GameState.GAME && gameState == GameState.MENU)  Reset();
+    if (nextState == GameState.GAME && gameState == GameState.MENU || nextState == GameState.GAME && gameState == GameState.ENDGAME )  Reset();
         lastState = gameState;
         gameState = nextState;
         changeStateDelegate();

@@ -18,8 +18,8 @@ public class ConditionIdle : Condition
    public override bool Test()
    {
        if (target == null) {return false;}
-       Debug.Log(Vector2.Distance(agent.position, target.position));
-       Debug.Log(maxDist);
+    //    Debug.Log(Vector2.Distance(agent.position, target.position));
+    //    Debug.Log(maxDist);
        return Vector2.Distance(agent.position, target.position) >= maxDist;
    }
 }

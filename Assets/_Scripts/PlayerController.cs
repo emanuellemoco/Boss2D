@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public Transform attackPoint; 
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
-    private float _attacktTimestamp = 0.0f;
+    private float _attacktTimestamp = 0.0f; 
     Animator animator;
     
     private Rigidbody2D rigidBody;
@@ -59,35 +59,34 @@ public class PlayerController : MonoBehaviour
 
 
         //Arrumar para permitir pulo duplo e nao infinito.
-        if (isGrounded() && Input.GetKeyDown(KeyCode.Space)){
+        if (isGrounded() && Input.GetKeyDown(KeyCode.UpArrow)){
             animator.SetBool("Jump", true);
             float jumpVelocity = 5f; 
-            rigidBody.velocity = Vector2.up * jumpVelocity;
+            rigidBody.velocity = Vector2.up * jumpVelocity; 
         }
     
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Space))
             Attack();
     }
 
-    void FixedUpdate()
+    void FixedUpdate() 
     {
-        if (gm.gameState != GameManager.GameState.GAME) return;
+        if (gm.gameState != GameManager.GameState.GAME) return; 
 
         if (!isDead){
         if (!isGrounded()) 
             animator.SetBool("Jump", false);
         float inputX = Input.GetAxis("Horizontal");
         transform.position += new Vector3(inputX, 0, 0) * Time.deltaTime * velocity;
-        // Thrust(inputX, 0);
-        if (inputX != 0) 
-            animator.SetFloat("Velocity", 1.0f);
         
+        if (inputX != 0)
+            animator.SetFloat("Velocity", 1.0f);
         else
             animator.SetFloat("Velocity", 0.0f);
         
         if (inputX < 0)
             transform.localRotation = Quaternion.Euler(0, 180, 0);
-        else
+        else if (inputX > 0 )
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
 

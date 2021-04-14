@@ -12,6 +12,7 @@ public class FollowState : State
     Animator animator;
     public float distMax = 4.0f;
     public float distMin = 1.0f;
+    public float velocidade = 4f;
      
     
     
@@ -59,7 +60,16 @@ public class FollowState : State
         
         direction = playerPos - transform.position;
         direction.Normalize();
-        steerable.Thrust(direction.x, 0);
+        if (direction.x > 0){
+            //anda para direita
+            steerable.Thrust(velocidade, 0); 
+        }
+        else {
+            // anda para esquerda
+            steerable.Thrust(-velocidade, 0);
+        }
+
+        
 
          if (direction.x < 0)
             transform.localRotation = Quaternion.Euler(0, 180, 0);
