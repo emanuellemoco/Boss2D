@@ -7,9 +7,11 @@ public class UI_Control : MonoBehaviour
 {
   GameManager gm;
   bool shiftOn = false; 
+ public Sprite OffSprite;
+ public Sprite OnSprite;
 
   // public Color wantedColor;
-  // public Button buttonSound; 
+  public Button buttonSound; 
 
 
   private void OnEnable()
@@ -25,17 +27,14 @@ public class UI_Control : MonoBehaviour
   public void OnOffSound()
   {
     Debug.Log("On Off Sound");
-    // shiftOn = !shiftOn;
-    // if (shiftOn)
-    //     this.GetComponent<Image>().color = Color.gray; 
-    // else
-    //      this.GetComponent<Image>().color = Color.white;    
 
-    // ColorBlock cb = buttonSound.colors;
-    // cb.normalColor = wantedColor;
-    // cb.pressedColor = wantedColor;
-    // cb.highlightedColor = wantedColor;
-    // buttonSound.colors = cb;
+    AudioManager.ToggleSound();
+
+    if (buttonSound.image.sprite == OnSprite)
+      buttonSound.image.sprite = OffSprite;
+    else {
+      buttonSound.image.sprite = OnSprite;
+    }
   } 
 
 

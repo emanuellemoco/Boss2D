@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
     private bool isDead; 
+    public AudioClip shootSFX; 
 
     
 
@@ -102,6 +103,8 @@ public class PlayerController : MonoBehaviour
         if ( Time.time - _attacktTimestamp < attackDelay) 
             return;
             
+        AudioManager.PlaySFX(shootSFX);
+
         _attacktTimestamp = Time.time;
         //Criar para os 3 tipos de ataques e chamar aleaoriamente
         animator.SetTrigger("Attack");

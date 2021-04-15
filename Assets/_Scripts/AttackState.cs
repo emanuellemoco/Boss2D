@@ -12,6 +12,9 @@ public class AttackState : State
     private float _attacktTimestamp = 0.0f;
     public float distMax = 4.0f;
     public float distMin = 0.25f;
+    
+    public AudioClip shootSFX; 
+
      
     public override void Awake()
     {
@@ -39,11 +42,13 @@ public class AttackState : State
     void Attack(){
         if ( Time.time - _attacktTimestamp < attackDelay) 
             return;
+
+        AudioManager.PlaySFX(shootSFX);
+
             
         _attacktTimestamp = Time.time;
         //Criar para os 3 tipos de ataques e chamar aleaoriamente
         
-        animator.SetFloat("Velocity", 0.0f);
         animator.SetTrigger("Attack");
         
         //Detectando o jogador

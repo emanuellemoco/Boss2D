@@ -191,6 +191,7 @@ MonoBehaviour:
     m_Bits: 8192
   distMax: 6
   distMin: 1
+  shootSFX: {fileID: 8300000, guid: 2dc73a6fc22528340a62671f6b7ab1fa, type: 3}
 --- !u!114 &2112865179664557353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +207,7 @@ MonoBehaviour:
   transitions: []
   distMax: 6
   distMin: 1
+  velocidade: 4
 --- !u!114 &2112865179664557358
 MonoBehaviour:
   m_ObjectHideFlags: 0
