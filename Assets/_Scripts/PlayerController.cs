@@ -63,13 +63,13 @@ public class PlayerController : MonoBehaviour
 
 
         //Arrumar para permitir pulo duplo e nao infinito.
-        if (isGrounded() && Input.GetKeyDown(KeyCode.UpArrow)){
+        if (isGrounded() && Input.GetKeyDown(KeyCode.UpArrow) && !isShield ){
             animator.SetTrigger("Jump");
             float jumpVelocity = 5f; 
             rigidBody.velocity = Vector2.up * jumpVelocity; 
         }
-    
-        if (Input.GetKeyDown(KeyCode.Q))
+     
+        if (Input.GetKeyDown(KeyCode.Q) && !isShield)
             Attack();
         if (Input.GetKey(KeyCode.F)){
             animator.SetBool("Shield", true); 
@@ -88,10 +88,9 @@ public class PlayerController : MonoBehaviour
         if (gm.gameState != GameManager.GameState.GAME) return; 
 
         if (!isDead){
-        if (!isGrounded()) 
-            animator.SetBool("Jump", false);
+            
         float inputX = Input.GetAxis("Horizontal");
-        transform.position += new Vector3(inputX, 0, 0) * Time.deltaTime * velocity;
+        if (!isShield) transform.position += new Vector3(inputX, 0, 0) * Time.deltaTime * velocity;
         
         if (inputX != 0 && !animator.GetBool("Jump") )
             animator.SetFloat("Velocity", 1.0f);
@@ -115,19 +114,22 @@ public class PlayerController : MonoBehaviour
             return;
             
         AudioManager.PlaySFX(shootSFX);
-
+    
         _attacktTimestamp = Time.time;
-        //Criar para os 3 tipos de ataques e chamar aleaoriamente
-        Debug.Log("ATAQUE");
+        int attack_anim = Random.Range(0,3);
 
-        animator.SetTrigger("Attack");
+        if (attack_anim == 0)
+            animator.SetTrigger("Attack1");
+        if (attack_anim == 1)
+            animator.SetTrigger("Attack2");
+        if (attack_anim == 2)
+            animator.SetTrigger("Attack3");
         
         //Detectando os inimigos
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         
         //Dano ao inimigo
         foreach(Collider2D enemy in hitEnemies){
-            Debug.Log("Bati no inimigo");
             enemy.gameObject.GetComponent<EnemyController>().TakeDamage();
         }
     }
