@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape) && gm.gameState == GameManager.GameState.GAME) {
             gm.ChangeState(GameManager.GameState.PAUSE);
+            Time.timeScale = 0;
         }
 
         Vector2 posicaoVP = Camera.main.WorldToViewportPoint(transform.position);

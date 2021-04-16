@@ -16,7 +16,6 @@ public class EnemyController : MonoBehaviour
     }
 
     public void Die(){
-        
         animator.SetTrigger("Death");
     }
     void Start()

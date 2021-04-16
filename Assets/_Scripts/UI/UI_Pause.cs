@@ -14,6 +14,7 @@ public class UI_Pause : MonoBehaviour
  
   public void Return()
   {
+      Time.timeScale = 1;
       gm.ChangeState(GameManager.GameState.GAME);
   }
 

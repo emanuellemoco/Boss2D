@@ -548,6 +548,11 @@ PrefabInstance:
       propertyPath: shootSFX
       value: 
       objectReference: {fileID: 8300000, guid: 0978810c77f9c454d83bad1b30edbbca, type: 3}
+    - target: {fileID: 3475136866623596147, guid: a2b08782acec51f44969f334f7372410,
+        type: 3}
+      propertyPath: velocidade
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3475136866623596148, guid: a2b08782acec51f44969f334f7372410,
         type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -638,6 +643,11 @@ PrefabInstance:
       propertyPath: shootSFX
       value: 
       objectReference: {fileID: 8300000, guid: 2dc73a6fc22528340a62671f6b7ab1fa, type: 3}
+    - target: {fileID: 2112865179664557353, guid: b6c1c9b8c7df2c94b982ce09bef9720b,
+        type: 3}
+      propertyPath: velocidade
+      value: 2.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2112865179664557356, guid: b6c1c9b8c7df2c94b982ce09bef9720b,
         type: 3}
       propertyPath: m_Name
@@ -743,6 +753,11 @@ PrefabInstance:
       propertyPath: shootSFX
       value: 
       objectReference: {fileID: 8300000, guid: 0978810c77f9c454d83bad1b30edbbca, type: 3}
+    - target: {fileID: 3475136866623596147, guid: a2b08782acec51f44969f334f7372410,
+        type: 3}
+      propertyPath: velocidade
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3475136866623596148, guid: a2b08782acec51f44969f334f7372410,
         type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -838,6 +853,11 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 1128666496}
+    - target: {fileID: 4724930015145900993, guid: 0116c0260f932e84d893b2f21f8d723c,
+        type: 3}
+      propertyPath: velocidade
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4724930015145900994, guid: 0116c0260f932e84d893b2f21f8d723c,
         type: 3}
       propertyPath: shootSFX
@@ -938,6 +958,11 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 3605953184244828002}
+    - target: {fileID: 4724930015145900993, guid: 0116c0260f932e84d893b2f21f8d723c,
+        type: 3}
+      propertyPath: velocidade
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4724930015145900994, guid: 0116c0260f932e84d893b2f21f8d723c,
         type: 3}
       propertyPath: shootSFX
