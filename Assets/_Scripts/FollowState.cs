@@ -16,7 +16,6 @@ public class FollowState : State
      
     
     
-    SteerableBehaviour steerable;
 
     public override void Awake()
     {
@@ -40,7 +39,6 @@ public class FollowState : State
     void Start() 
     {
         gm = GameManager.GetInstance();
-        steerable = GetComponent<SteerableBehaviour>();
         animator = GetComponent<Animator>();
 
     }
@@ -59,15 +57,10 @@ public class FollowState : State
             playerPos =  player.transform.position;
         
         direction = playerPos - transform.position;
-        direction.Normalize();
-        if (direction.x > 0){
-            //anda para direita
-            steerable.Thrust(velocidade, 0); 
-        }
-        else {
-            // anda para esquerda
-            steerable.Thrust(-velocidade, 0);
-        }
+        if (direction.x >= 0)
+            transform.position += new Vector3(velocidade, 0, 0) * Time.deltaTime; 
+        else
+            transform.position += new Vector3(-velocidade, 0, 0) * Time.deltaTime;
 
         
 

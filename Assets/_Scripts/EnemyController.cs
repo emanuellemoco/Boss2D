@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : SteerableBehaviour
+public class EnemyController : MonoBehaviour
 {
     private GameManager gm;
     Animator animator;

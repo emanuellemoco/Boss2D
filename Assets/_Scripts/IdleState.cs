@@ -89,7 +89,7 @@ public class IdleState : State
             transform.localRotation = Quaternion.Euler(0, 0, 0);
 
         direction.Normalize();
-        steerable.Thrust(direction.x, 0);
+        transform.position += new Vector3(direction.x, 0, 0) * Time.deltaTime ;
     }
 
 }

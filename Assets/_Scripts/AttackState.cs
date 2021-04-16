@@ -47,7 +47,6 @@ public class AttackState : State
 
             
         _attacktTimestamp = Time.time;
-        //Criar para os 3 tipos de ataques e chamar aleaoriamente
         
         animator.SetTrigger("Attack");
         
