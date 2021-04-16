@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
     private bool isDead; 
+    private bool isShield;
     public AudioClip shootSFX; 
 
     
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
         gm = GameManager.GetInstance();
         animator = GetComponent<Animator>();
         isDead = false;
+        isShield = false;
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         
@@ -56,20 +58,29 @@ public class PlayerController : MonoBehaviour
         Vector2 posicaoVP = Camera.main.WorldToViewportPoint(transform.position);
         if(posicaoVP.y < 0)
         {
-            Debug.Log("Caiu no buraco");
             Die();
         }
 
 
         //Arrumar para permitir pulo duplo e nao infinito.
         if (isGrounded() && Input.GetKeyDown(KeyCode.UpArrow)){
-            animator.SetBool("Jump", true);
+            animator.SetTrigger("Jump");
             float jumpVelocity = 5f; 
             rigidBody.velocity = Vector2.up * jumpVelocity; 
         }
     
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Q))
             Attack();
+        if (Input.GetKey(KeyCode.F)){
+            animator.SetBool("Shield", true); 
+            isShield = true;
+            }
+        else {
+            animator.SetBool("Shield", false); 
+            isShield = false;
+        }
+
+
     }
 
     void FixedUpdate() 
@@ -82,7 +93,7 @@ public class PlayerController : MonoBehaviour
         float inputX = Input.GetAxis("Horizontal");
         transform.position += new Vector3(inputX, 0, 0) * Time.deltaTime * velocity;
         
-        if (inputX != 0)
+        if (inputX != 0 && !animator.GetBool("Jump") )
             animator.SetFloat("Velocity", 1.0f);
         else
             animator.SetFloat("Velocity", 0.0f);
@@ -107,6 +118,8 @@ public class PlayerController : MonoBehaviour
 
         _attacktTimestamp = Time.time;
         //Criar para os 3 tipos de ataques e chamar aleaoriamente
+        Debug.Log("ATAQUE");
+
         animator.SetTrigger("Attack");
         
         //Detectando os inimigos
@@ -128,8 +141,10 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage()
     {
-        gm.life--;
-        if (gm.life <=0) Die();
+        if (!isShield){
+            gm.life--;
+            if (gm.life <=0) Die();
+        }
     }
  
     private void Die()

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class UI_Control : MonoBehaviour
 {
   GameManager gm;
-  bool shiftOn = false; 
  public Sprite OffSprite;
  public Sprite OnSprite;
 
