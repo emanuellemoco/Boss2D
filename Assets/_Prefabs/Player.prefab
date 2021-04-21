@@ -129,6 +129,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16384
   shootSFX: {fileID: 8300000, guid: 2b1f991c57f08d841b13292ddb3be9c4, type: 3}
+  healthBar: {fileID: 5296370027295103669, guid: 1dc9599cd6ad1b94eaa772bc430017ef,
+    type: 3}
 --- !u!50 &4890862534801986137
 Rigidbody2D:
   serializedVersion: 4
@@ -167,7 +169,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6857143, y: 0.85714287}
+    oldSize: {x: 0.8, y: 1}
     newSize: {x: 0.28255233, y: 0.34}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

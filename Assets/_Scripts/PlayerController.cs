@@ -24,10 +24,10 @@ public class PlayerController : MonoBehaviour
     private bool isDead; 
     private bool isShield;
     public AudioClip shootSFX; 
+    public HealthBar healthBar;
+        
 
-    
-
-    [SerializeField]
+    [SerializeField] 
     // private int life = 5;
 
     void Start()
@@ -38,6 +38,10 @@ public class PlayerController : MonoBehaviour
         isShield = false;
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        
+        healthBar.SetMaxHealth(gm.Maxlife);
+
+
         
     }
     bool isGrounded(){
@@ -146,6 +150,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!isShield){
             gm.life--;
+            healthBar.SetHealth(gm.life);
             if (gm.life <=0) Die();
         }
     }
