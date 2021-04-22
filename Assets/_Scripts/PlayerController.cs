@@ -24,8 +24,7 @@ public class PlayerController : MonoBehaviour
     private bool isDead; 
     private bool isShield;
     public AudioClip shootSFX; 
-    public HealthBar healthBar;
-        
+    Color colorRed = new Color (154, 0, 11);
 
     [SerializeField] 
     // private int life = 5;
@@ -39,7 +38,6 @@ public class PlayerController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         
-        healthBar.SetMaxHealth(gm.Maxlife);
 
 
         
@@ -108,11 +106,20 @@ public class PlayerController : MonoBehaviour
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
 
-
-
         
     }
+    IEnumerator flashRed() {
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<SpriteRenderer> ().color = colorRed;
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<SpriteRenderer> ().color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<SpriteRenderer> ().color = colorRed;
+        yield return new WaitForSeconds(0.1f); 
+        GetComponent<SpriteRenderer> ().color = Color.white;
 
+    }
+ 
 
     void Attack(){
         if ( Time.time - _attacktTimestamp < attackDelay) 
@@ -150,8 +157,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!isShield){
             gm.life--;
-            healthBar.SetHealth(gm.life);
             if (gm.life <=0) Die();
+            else StartCoroutine(flashRed());
         }
     }
  

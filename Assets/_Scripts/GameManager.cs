@@ -10,7 +10,6 @@ public class GameManager
     public GameState gameState { get; private set; }
     public GameState lastState { get; private set; }
     public int life;
-    public int Maxlife;
 
     
 
@@ -35,7 +34,6 @@ public class GameManager
     private GameManager()
    {
        life = 5;
-       Maxlife = 5 ;
        
        gameState = GameState.MENU;
        lastState = GameState.MENU;

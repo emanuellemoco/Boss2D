@@ -8,24 +8,20 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
     public Gradient gradient; 
     public Image fill;
-    public void SetMaxHealth (int health)
-    {
-        Debug.Log("SetMaxHealth");
-        Debug.Log(health);
-        Debug.Log("________");
-        slider.maxValue = health;
-        slider.value = health;
+    private GameManager gm;
 
-        //para ter cores
-        fill.color = gradient.Evaluate(1f);
+
+    public void Start()
+    {
+        gm = GameManager.GetInstance();
+
+        slider.maxValue = gm.life;
+        slider.value = gm.life;
     }
 
-    public void SetHealth (int health)
+    public void Update ()
     {
-        Debug.Log("SetHealth");
-        Debug.Log(health);
-        Debug.Log("________");
-        slider.value = health;
+        slider.value = gm.life;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 

@@ -124,13 +124,11 @@ MonoBehaviour:
     m_Bits: 4096
   attackDelay: 0.5
   attackPoint: {fileID: 4890862535136790344}
-  attackRange: 0.35
+  attackRange: 0.4
   enemyLayers:
     serializedVersion: 2
     m_Bits: 16384
   shootSFX: {fileID: 8300000, guid: 2b1f991c57f08d841b13292ddb3be9c4, type: 3}
-  healthBar: {fileID: 5296370027295103669, guid: 1dc9599cd6ad1b94eaa772bc430017ef,
-    type: 3}
 --- !u!50 &4890862534801986137
 Rigidbody2D:
   serializedVersion: 4
