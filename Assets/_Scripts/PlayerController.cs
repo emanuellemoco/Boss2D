@@ -26,6 +26,10 @@ public class PlayerController : MonoBehaviour
     public AudioClip shootSFX; 
     Color colorRed = new Color (154, 0, 11);
 
+    float startTime = 0f;
+    float holdTime = 2.0f; // 5 seconds
+    
+
     [SerializeField] 
     // private int life = 5;
 
@@ -58,15 +62,18 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 0;
         }
 
-        Vector2 posicaoVP = Camera.main.WorldToViewportPoint(transform.position);
-        if(posicaoVP.y < 0)
-        {
-            Die();
-        }
-
+        
+         if (Input.GetKeyDown(KeyCode.DownArrow)){
+            startTime += Time.time;
+            // CameraFocus.LookDown();
+            
+            if (startTime  >= Time.time + holdTime){
+                startTime = 0;
+                CameraFocus.LookDown();}
+         }
 
         //Arrumar para permitir pulo duplo e nao infinito.
-        if (isGrounded() && Input.GetKeyDown(KeyCode.UpArrow) && !isShield ){
+        if (isGrounded() && (Input.GetKeyDown(KeyCode.UpArrow)  || Input.GetKeyDown(KeyCode.Space) ) && !isShield ){
             animator.SetTrigger("Jump");
             float jumpVelocity = 5f; 
             rigidBody.velocity = Vector2.up * jumpVelocity; 
