@@ -7,11 +7,14 @@ public class CameraFocus : MonoBehaviour
     GameObject player;
     // Update is called once per frame
     private static Camera _instance;
-    private static bool down;
-    void Start(){
 
+    private static CameraFocus _coroutine;
+    public static bool down; 
+    void Start(){
+ 
         _instance = Camera.main;
         down = false;
+        _coroutine = this;
     }
     void Update()
     {   
@@ -22,10 +25,28 @@ public class CameraFocus : MonoBehaviour
  
         
     }
-
+ 
     public static void LookDown(){
-        down = !down;
-        _instance.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y -2f, Camera.main.transform.position.z); 
-
+        down = true;
+        for (int i =0; i<300;i++){
+        _coroutine.StartCoroutine("downCamera");
+        }}
+    public static void LookUp(){
+        for (int i =0; i<300;i++){
+            _coroutine.StartCoroutine("upCamera");
+        }
+        down = false;
+ 
+    }
+  
+    IEnumerator downCamera() {
+        _instance.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y -0.01f, Camera.main.transform.position.z); 
+            yield return new WaitForSeconds(20);  
+    }
+    IEnumerator upCamera() {  
+            _instance.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y +0.01f, Camera.main.transform.position.z);
+            yield return new WaitForSeconds(20); 
     }
 }
+
+
