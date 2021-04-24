@@ -39,6 +39,19 @@ public class AttackState : State
         
     }
 
+    IEnumerator doDamage() {
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length/1.5f);
+        
+        //Detectando o jogador
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+        
+        //Dano ao inimigo
+        foreach(Collider2D player in hitPlayer){
+            Debug.Log("Player atingido");
+            player.gameObject.GetComponent<PlayerController>().TakeDamage();
+        }
+    }
+
     void Attack(){
         if ( Time.time - _attacktTimestamp < attackDelay) 
             return;
@@ -49,15 +62,9 @@ public class AttackState : State
         _attacktTimestamp = Time.time;
         
         animator.SetTrigger("Attack");
+        StartCoroutine("doDamage");
+
         
-        //Detectando o jogador
-        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
-        
-        //Dano ao inimigo
-        foreach(Collider2D player in hitPlayer){
-            Debug.Log("Player atingido");
-            player.gameObject.GetComponent<PlayerController>().TakeDamage();
-        }
     }
     void OnDrawGizmosSelected()
     {

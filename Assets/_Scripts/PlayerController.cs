@@ -174,5 +174,15 @@ public class PlayerController : MonoBehaviour
         } 
 
     }
+    void OnTriggerEnter2D(Collider2D collision){
+        if (collision.gameObject.tag == "Food"){            
+            gm.life += 1;
+            Destroy(collision.gameObject);
+        }
+
+        else if (collision.gameObject.tag == "Border")           
+            Die();
+
+    }
 
 }

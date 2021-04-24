@@ -158,7 +158,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.72, y: 0.8}
+    oldSize: {x: 1.2857143, y: 1.4285715}
     newSize: {x: 0.36, y: 0.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -198,7 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74709f928cdf7f14580b7385c658fc71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  td: {fileID: 11400000, guid: c7312397a285f4a4ea23e1a5804cc067, type: 2}
   life: 3
 --- !u!114 &3475136866623596146
 MonoBehaviour:
@@ -216,7 +215,7 @@ MonoBehaviour:
   - target: {fileID: 0}
   attackDelay: 3
   attackPoint: {fileID: 3475136866206311436}
-  attackRange: 0.5
+  attackRange: 0.8
   playerLayer:
     serializedVersion: 2
     m_Bits: 8192

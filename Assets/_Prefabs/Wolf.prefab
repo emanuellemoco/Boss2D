@@ -198,7 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74709f928cdf7f14580b7385c658fc71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  td: {fileID: 11400000, guid: c7312397a285f4a4ea23e1a5804cc067, type: 2}
   life: 3
 --- !u!114 &4724930015145900994
 MonoBehaviour:
@@ -215,7 +214,7 @@ MonoBehaviour:
   transitions: []
   attackDelay: 1
   attackPoint: {fileID: 4724930014745812757}
-  attackRange: 0.4
+  attackRange: 0.5
   playerLayer:
     serializedVersion: 2
     m_Bits: 8192
